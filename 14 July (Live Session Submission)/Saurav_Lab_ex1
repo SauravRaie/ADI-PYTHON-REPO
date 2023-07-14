@@ -1,0 +1,50 @@
+#To read contents from the excel sheet and print the top two Highest power rating device with their current and power rating.
+
+#Packages required : pandas and openpyxl 
+#If not present go to this place and install the packages if not present
+#view -> Tool Windows -> Terminal and do the following
+#pip install pandas
+#pip install openpyxl
+
+import pandas as pd
+df= pd.read_excel("Iterator-Lab.xlsx", sheet_name=0)
+list_device = list(df['Device'])
+list_current = list(df['Current'])
+list_power = list(df['Power'])
+sort_list_power= sorted(list_power, reverse=True)
+#print('sort_list_power ',sort_list_power)
+index_1= list_power.index(sort_list_power[0])
+index_2= list_power.index(sort_list_power[1])
+print("Top 2 power rating Devices are ", list_device[index_1], ' and ',list_device[index_2])
+print("Top 2 power rated Current readings are ", list_current[index_1], ' and ',list_current[index_2])
+print("Top 2 power readings are ", list_power[index_1], ' and ',list_power[index_2])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
